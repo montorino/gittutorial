@@ -1,0 +1,25 @@
+name: Concurrent PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test-on-pr:
+    name: Build and Test On Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output HeadRef
+        run: echo "${{github.head_ref}}"
+
+      - name: Build The Code
+        run: |
+          echo "Starting Code Build"
+          sleep 2m
+          echo "Ending Code Build"
+
+      - name: Test The Code
+        run: |
+          echo "Starting Code Build"
+          sleep 2m
+          echo "Ending Code Build"
